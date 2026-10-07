@@ -1,11 +1,65 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const name = "Alaa";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{name}'s Website</title>
+  </head>
+
+  <body>
+    <main>
+      <h1>Welcome to {name}'s Website</h1>
+      <p>My Astro website is live 🚀</p>
+
+      <a href="https://github.com/alaa-masaoud" target="_blank">
+        GitHub
+      </a>
+    </main>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    background: #0d0d0d;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+
+  main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: #aaa;
+  }
+
+  a {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: white;
+    color: black;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  a:hover {
+    transform: scale(1.05);
+  }
+</style>
