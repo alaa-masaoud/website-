@@ -1,65 +1,1403 @@
+
 ---
-const name = "Alaa";
+import Layout from "../layouts/Layout.astro";
+
+const github = "https://github.com/alaa-masaoud";
+const linkedin = "https://www.linkedin.com/in/alaa-masaoud-9903152bb/";
+const email = "amasaoud005@gmail.com";
+
+const research = [
+  {
+    category: "Extreme Value Theory",
+    title: "Tail Parameter Estimation for Integrated Information",
+    description:
+      "A simulation study comparing tail-parameter estimation methods for extreme value distributions, with the goal of improving confidence intervals for estimates of minimum integrated information.",
+    details:
+      "Methods were evaluated using confidence interval coverage, average interval length, bias, variance, and an overall quality score. Grimshaw MLE showed the strongest overall performance among methods with estimated tail parameters.",
+    tags: ["Statistics", "Extreme Value Theory", "Simulation", "R"],
+    link: "https://github.com/alaa-masaoud/CI_min",
+    linkText: "View Research",
+    status: "Research Project"
+  },
+  {
+    category: "Honours Thesis",
+    title: "Minimum Information Partitions and Queyranne's Algorithm",
+    description:
+      "Investigating mathematical and computational approaches to identifying minimum information partitions within Integrated Information Theory.",
+    details:
+      "Current work focuses on symmetric submodular minimization, maximum adjacency orderings, contraction methods, and implementing Queyranne's algorithm in Python.",
+    tags: ["Optimization", "Algorithms", "Python", "Mathematics"],
+    link: github,
+    linkText: "Explore GitHub",
+    status: "In Progress"
+  }
+];
+
+const projects = [
+  {
+    number: "01",
+    title: "Genetic Algorithm for Vigenère Cryptanalysis",
+    description:
+      "Exploring evolutionary optimization techniques for recovering encryption keys and evaluating the effectiveness of genetic algorithms.",
+    tags: ["Python", "Genetic Algorithms", "Optimization"]
+  },
+  {
+    number: "02",
+    title: "Reinforcement Learning Experiments",
+    description:
+      "Implementing and comparing reinforcement learning approaches using environments such as Taxi-v3 and LunarLander.",
+    tags: ["Python", "Reinforcement Learning", "AI"]
+  },
+  {
+    number: "03",
+    title: "Statistical Learning and Classification",
+    description:
+      "Statistical modelling work involving regularization, regression, classification, and predictive model evaluation.",
+    tags: ["R", "Statistics", "Machine Learning"]
+  },
+  {
+    number: "04",
+    title: "Cancer Survival and Prediction Studies",
+    description:
+      "Planned independent research exploring survival analysis, cancer outcome prediction, and statistical learning methods using publicly available datasets.",
+    tags: ["Biostatistics", "Survival Analysis", "Research"],
+    upcoming: true
+  }
+];
+
+const interests = [
+  "Biostatistics",
+  "Statistical Inference",
+  "Extreme Value Theory",
+  "Survival Analysis",
+  "Mathematical Optimization",
+  "Predictive Modelling"
+];
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{name}'s Website</title>
-  </head>
-
-  <body>
-    <main>
-      <h1>Welcome to {name}'s Website</h1>
-      <p>My Astro website is live 🚀</p>
-
-      <a href="https://github.com/alaa-masaoud" target="_blank">
-        GitHub
+<Layout
+  title="Alaa Masaoud | Research & Academic Portfolio"
+  description="Academic portfolio of Alaa Masaoud, featuring research in statistics, artificial intelligence, extreme value theory, and mathematical optimization."
+>
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="logo" aria-label="Alaa Masaoud homepage">
+        AM<span>.</span>
       </a>
-    </main>
-  </body>
-</html>
+
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#goals">Goals</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-socials">
+        <a href={linkedin} target="_blank" rel="noopener noreferrer" class="nav-linkedin">
+          LinkedIn ↗
+        </a>
+        <a href={github} target="_blank" rel="noopener noreferrer" class="nav-button">
+          GitHub ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <div class="eyebrow">
+            <span class="eyebrow-line"></span>
+            COMPUTER SCIENCE · STATISTICS · RESEARCH
+          </div>
+
+          <h1>
+            Hello, I'm <br />
+            <span>Alaa Masaoud.</span>
+          </h1>
+
+          <p class="hero-description">
+            An Honours Computer Science student specializing in
+            Artificial Intelligence at Brock University, with a
+            growing focus on statistics, mathematical research,
+            and computational methods.
+          </p>
+
+          <p class="hero-secondary">
+            Exploring how statistical theory and computational tools
+            can help us understand complex problems and make
+            better decisions.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#research" class="button button-primary">
+              Explore My Research <span>↗</span>
+            </a>
+            <a href="#about" class="button button-outline">
+              More About Me
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <div>
+              <span class="meta-label">UNIVERSITY</span>
+              <strong>Brock University</strong>
+            </div>
+            <div>
+              <span class="meta-label">ACADEMIC FOCUS</span>
+              <strong>Statistics & Artificial Intelligence</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <figure class="hero-photo">
+            <img
+              src="/award-photo.jpg"
+              alt="Alaa Masaoud holding his Best Poster Presentation award certificate at the Undergraduate Research Symposium"
+              loading="eager"
+              fetchpriority="high"
+            />
+            <figcaption>
+              <span>Best Poster Presentation</span>
+              <span>Undergraduate Research Symposium · 2026</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div>
+          <span class="section-label">01 / ABOUT ME</span>
+          <h2 class="section-title">
+            A curiosity for <em>complex problems.</em>
+          </h2>
+        </div>
+
+        <div class="about-content">
+          <p class="lead">
+            My academic interests sit at the crossroads of
+            computer science, statistics, and math.
+          </p>
+
+          <p>
+            I am in my fourth year of pursuing a BSc Honours degree in Computer Science
+            with a specialization in Artificial Intelligence at
+            Brock University. Alongside my computer science studies,
+            I have developed a strong interest in statistical methods,
+            probability, and mathematical modelling.
+          </p>
+
+          <p>
+            My research experience includes investigating extreme
+            value distributions and tail-parameter estimation, as well
+            as studying optimization methods for Integrated
+            Information Theory through my undergraduate honours thesis.
+          </p>
+
+          <p>
+            I enjoy working on problems that combine mathematical
+            reasoning, statistical analysis, and computational
+            implementation.
+          </p>
+
+          <div class="interest-block">
+            <h3>Areas of Interest</h3>
+            <div class="tags">
+              {interests.map((interest) => (
+                <span class="tag">{interest}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUTURE GOALS -->
+    <section id="goals" class="section goals-section">
+      <div class="container">
+        <span class="section-label light-label">02 / LOOKING AHEAD</span>
+
+        <h2 class="section-title light-title">
+          Where I hope <br />
+          <em>to go next.</em>
+        </h2>
+
+        <div class="goals-grid">
+          <div class="goals-main">
+            <p class="goals-lead">
+              I hope to pursue graduate studies that allow me to
+              deepen my understanding of statistical theory and
+              its applications to meaningful real-world problems.
+            </p>
+
+            <p>
+              Following my undergraduate degree, I intend to pursue
+              an MSc in Biostatistics, Statistics, or Actuarial Science.
+            </p>
+
+            <p>
+              I am especially interested in applications involving
+              healthcare outcomes, survival analysis, risk assessment,
+              statistical learning, and uncertainty quantification.
+            </p>
+
+            <p>
+              In the longer term, I hope to contribute to research
+              and industry projects where rigorous statistical
+              methods can support better decisions.
+            </p>
+          </div>
+
+          <div class="goals-cards">
+            <div class="goal-card">
+              <span class="goal-number">01</span>
+              <h3>Graduate Studies</h3>
+              <p>
+                Pursuing advanced training in statistical inference,
+                modelling, and applied research.
+              </p>
+            </div>
+
+            <div class="goal-card">
+              <span class="goal-number">02</span>
+              <h3>Applied Research</h3>
+              <p>
+                Developing statistical methods for healthcare,
+                risk analysis, and predictive modelling.
+              </p>
+            </div>
+
+            <div class="goal-card">
+              <span class="goal-number">03</span>
+              <h3>Professional Growth</h3>
+              <p>
+                Building a career that combines analytical
+                problem-solving with meaningful applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-label">03 / RESEARCH</span>
+            <h2 class="section-title">
+              Research & <em>exploration.</em>
+            </h2>
+          </div>
+
+          <p class="section-intro">
+            Investigating questions in statistics,
+            mathematical optimization, and computational research.
+          </p>
+        </div>
+
+        <div class="research-grid">
+          {research.map((item) => (
+            <article class="research-card">
+              <div class="card-top">
+                <span class="card-category">{item.category}</span>
+                <span class="status">{item.status}</span>
+              </div>
+
+              <h3>{item.title}</h3>
+
+              <p>{item.description}</p>
+              <p class="research-details">{item.details}</p>
+
+              <div class="tags">
+                {item.tags.map((tag) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-link"
+              >
+                {item.linkText} <span>↗</span>
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <div class="research-note">
+          <span class="note-icon">✦</span>
+          <p>
+            My undergraduate research has been supervised by
+            Dr. William Marshall at Brock University.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-label">04 / TECHNICAL WORK</span>
+            <h2 class="section-title">
+              Selected <em>projects.</em>
+            </h2>
+          </div>
+
+          <p class="section-intro">
+            A collection of computational and statistical projects
+            developed through coursework, independent learning,
+            and research.
+          </p>
+        </div>
+
+        <div class="projects-list">
+          {projects.map((project) => (
+            <article class="project-item">
+              <span class="project-number">{project.number}</span>
+
+              <div class="project-info">
+                <div class="project-title-row">
+                  <h3>{project.title}</h3>
+                  {project.upcoming && (
+                    <span class="upcoming">PLANNED</span>
+                  )}
+                </div>
+
+                <p>{project.description}</p>
+
+                <div class="tags">
+                  {project.tags.map((tag) => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div class="projects-footer">
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button button-primary"
+          >
+            View My GitHub <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section">
+      <div class="container achievements-grid">
+        <div>
+          <span class="section-label">05 / ACHIEVEMENTS</span>
+          <h2 class="section-title">
+            Milestones & <em>recognition.</em>
+          </h2>
+
+          <p class="achievements-intro">
+            Selected highlights from my academic and
+            research experience.
+          </p>
+        </div>
+
+        <div class="achievement-list">
+          <div class="achievement">
+            <span class="achievement-year">2026</span>
+            <div>
+              <h3>Best Poster Presentation</h3>
+              <p>
+                Undergraduate Research Symposium —
+                recognition for my research presentation.
+              </p>
+            </div>
+          </div>
+
+          <div class="achievement">
+            <span class="achievement-year">ONGOING</span>
+            <div>
+              <h3>Undergraduate Honours Thesis</h3>
+              <p>
+                Research on minimum information partitions,
+                symmetric submodular optimization, and
+                Queyranne's algorithm.
+              </p>
+            </div>
+          </div>
+
+          <div class="achievement">
+            <span class="achievement-year">RESEARCH</span>
+            <div>
+              <h3>Extreme Value Theory Simulation Study</h3>
+              <p>
+                Comparative evaluation of tail-parameter
+                estimation methods and confidence interval performance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv" class="section cv-section">
+      <div class="container cv-container">
+        <div>
+          <span class="section-label">06 / CURRICULUM VITAE</span>
+          <h2 class="section-title">
+            Academic <em>CV.</em>
+          </h2>
+
+          <p>
+            My CV will include my education, research experience,
+            technical skills, academic projects, presentations,
+            and achievements.
+          </p>
+        </div>
+
+        <div class="cv-action">
+          <span class="cv-icon" aria-hidden="true">↗</span>
+          <p>CV currently being prepared</p>
+          <span class="cv-coming-soon">COMING SOON</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+      <div class="container contact-container">
+        <span class="section-label light-label">07 / GET IN TOUCH</span>
+
+        <h2>Let's connect<span>.</span></h2>
+
+        <p>
+          I welcome opportunities to connect with students,
+          researchers, and professionals interested in statistics,
+          artificial intelligence, and applied research.
+        </p>
+
+        <a href={`mailto:${email}`} class="contact-email">
+          {email}
+        </a>
+
+        <div class="contact-links">
+          <a href={`mailto:${email}`} class="button button-light">
+            Email Me ↗
+          </a>
+
+          <a
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button button-contact-outline"
+          >
+            LinkedIn ↗
+          </a>
+
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button button-contact-outline"
+          >
+            GitHub ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <a href="#home" class="footer-logo">AM<span>.</span></a>
+
+      <p>© {new Date().getFullYear()} Alaa Masaoud</p>
+
+      <div class="footer-links">
+        <a href={`mailto:${email}`}>Email</a>
+        <a href={linkedin} target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+        <a href={github} target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </footer>
+</Layout>
 
 <style>
-  body {
-    margin: 0;
-    background: #0d0d0d;
-    color: white;
-    font-family: Arial, sans-serif;
+  .container {
+    width: min(1160px, calc(100% - 48px));
+    margin: 0 auto;
   }
 
-  main {
-    min-height: 100vh;
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247, 245, 239, 0.96);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-container {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .logo,
+  .footer-logo {
+    font-family: var(--font-heading);
+    font-size: 29px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--forest);
+  }
+
+  .logo span,
+  .footer-logo span {
+    color: var(--gold);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  nav a {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  nav a:hover {
+    color: var(--forest-light);
+  }
+
+  .nav-socials {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .nav-linkedin {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--forest);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .nav-linkedin:hover {
+    color: var(--forest-light);
+  }
+
+  .nav-button {
+    background: var(--forest);
+    color: white;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .hero {
+    padding: 105px 0 100px;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 65px;
+  }
+
+  .eyebrow,
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--forest-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .eyebrow-line {
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    margin: 24px 0 28px;
+    color: var(--forest);
+    font-size: clamp(54px, 6vw, 90px);
+    letter-spacing: -3px;
+  }
+
+  .hero h1 span {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .hero-description {
+    font-size: 19px;
+    line-height: 1.8;
+    max-width: 610px;
+    color: var(--text);
+  }
+
+  .hero-secondary {
+    max-width: 550px;
+    margin-top: 18px;
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 13px 23px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
+  }
+
+  .button-primary {
+    background: var(--forest);
+    color: white;
+  }
+
+  .button-primary:hover {
+    background: var(--forest-light);
+  }
+
+  .button-outline {
+    border: 1px solid var(--forest);
+    color: var(--forest);
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 60px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
+  }
+
+  .hero-meta div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 4px;
+  }
+
+  .meta-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  .hero-meta strong {
+    font-size: 13px;
+    color: var(--forest);
+  }
+
+  .hero-visual {
+    min-width: 0;
+  }
+
+  
+.hero-photo {
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 45px rgba(24, 60, 52, 0.08);
+}
+
+
+  
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+  .hero-photo figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 18px 22px;
+    background: #fff;
+  }
+
+  .hero-photo figcaption span:first-child {
+    color: var(--forest);
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  .hero-photo figcaption span:last-child {
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .section {
+    padding: 105px 0;
+  }
+
+  .section-title {
+    margin: 20px 0 0;
+    font-size: clamp(39px, 4vw, 58px);
+    color: var(--forest);
+    letter-spacing: -1.5px;
+  }
+
+  .section-title em {
+    font-weight: 400;
+  }
+
+  .about-grid,
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 100px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+    color: var(--muted);
+    margin: 0 0 20px;
+  }
+
+  .about-content .lead {
+    color: var(--forest);
+    font-size: 22px;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  .interest-block {
+    margin-top: 35px;
+  }
+
+  .interest-block h3 {
+    color: var(--forest);
+    font-size: 22px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #EDF0E8;
+    border: 1px solid #E0E5D9;
+    border-radius: 4px;
+    color: var(--forest);
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .goals-section {
+    background: var(--forest);
+    color: #E5ECE6;
+  }
+
+  .light-label {
+    color: var(--gold);
+  }
+
+  .light-title {
+    color: white;
+  }
+
+  .goals-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 100px;
+    margin-top: 55px;
+  }
+
+  .goals-main p {
+    font-size: 15px;
+    color: #C6D5CD;
+    margin: 0 0 23px;
+  }
+
+  .goals-main .goals-lead {
+    color: white;
+    font-size: 23px;
+    line-height: 1.65;
+  }
+
+  .goals-cards {
+    display: grid;
+    gap: 15px;
+  }
+
+  .goal-card {
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.035);
+  }
+
+  .goal-number {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .goal-card h3 {
+    color: white;
+    font-size: 21px;
+    margin: 8px 0;
+  }
+
+  .goal-card p {
+    font-size: 13px;
+    color: #C6D5CD;
+    margin: 0;
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 45px;
+  }
+
+  .section-intro {
+    max-width: 350px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .research-card {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .research-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(24, 60, 52, 0.07);
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  }
+
+  .card-category {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--forest-light);
+  }
+
+  .status,
+  .upcoming {
+    font-size: 10px;
+    font-weight: 700;
+    color: #8A6B36;
+    background: #F6EEDA;
+    padding: 5px 9px;
+    border-radius: 3px;
+  }
+
+  .research-card h3 {
+    color: var(--forest);
+    font-size: 28px;
+    margin-bottom: 18px;
+  }
+
+  .research-card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 15px;
+  }
+
+  .research-card .research-details {
+    font-size: 13px;
+  }
+
+  .research-card .tags {
+    margin: 15px 0 25px;
+  }
+
+  .text-link {
+    margin-top: auto;
+    display: inline-flex;
+    gap: 12px;
+    color: var(--forest);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .text-link:hover {
+    color: var(--forest-light);
+  }
+
+  .research-note {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .note-icon {
+    color: var(--gold);
+    font-size: 25px;
+  }
+
+  .projects-section {
+    background: #EFEFE8;
+  }
+
+  .projects-list {
+    border-top: 1px solid #D5D9CE;
+  }
+
+  .project-item {
+    display: grid;
+    grid-template-columns: 65px 1fr;
+    gap: 25px;
+    padding: 32px 0;
+    border-bottom: 1px solid #D5D9CE;
+  }
+
+  .project-number {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--forest-light);
+  }
+
+  .project-info h3 {
+    color: var(--forest);
+    font-size: 25px;
+    margin: 0 0 12px;
+  }
+
+  .project-title-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .project-info p {
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 730px;
+    margin: 0 0 17px;
+  }
+
+  .projects-footer {
+    margin-top: 35px;
+  }
+
+  .achievements-intro {
+    max-width: 350px;
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 25px;
+  }
+
+  .achievement {
+    display: grid;
+    grid-template-columns: 105px 1fr;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .achievement:first-child {
+    padding-top: 0;
+  }
+
+  .achievement-year {
+    color: var(--forest-light);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+  }
+
+  .achievement h3 {
+    font-size: 23px;
+    color: var(--forest);
+    margin-bottom: 9px;
+  }
+
+  .achievement p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0;
+  }
+
+  .cv-section {
+    background: #E9ECE3;
+  }
+
+  .cv-container {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    align-items: center;
+    gap: 90px;
+  }
+
+  .cv-container p {
+    max-width: 550px;
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .cv-action {
+    border: 1px dashed #9DAFA2;
+    padding: 40px;
     text-align: center;
   }
 
-  h1 {
-    font-size: 3rem;
+  .cv-icon {
+    font-size: 38px;
+    color: var(--forest);
+  }
+
+  .cv-action p {
+    font-family: var(--font-heading);
+    color: var(--forest);
+    font-size: 22px;
+  }
+
+  .cv-coming-soon {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--muted);
+  }
+
+  .contact-section {
+    background: #122F29;
+    color: white;
+    text-align: center;
+  }
+
+  .contact-container {
+    max-width: 760px;
+  }
+
+  .contact-container h2 {
+    font-size: clamp(55px, 7vw, 90px);
+    letter-spacing: -2px;
+    margin: 20px 0;
+  }
+
+  .contact-container h2 span {
+    color: var(--gold);
+  }
+
+  .contact-container p {
+    color: #C6D5CD;
+    font-size: 16px;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .contact-email {
+    display: inline-block;
+    margin-top: 28px;
+    color: #D4B78C;
+    font-size: clamp(16px, 2.5vw, 21px);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 183, 140, 0.5);
+    padding-bottom: 5px;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-email:hover {
+    color: white;
+    border-bottom-color: white;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 35px;
+  }
+
+  .button-light {
+    background: var(--background);
+    color: var(--forest);
+  }
+
+  .button-contact-outline {
+    border: 1px solid #718B80;
+    color: white;
+  }
+
+  .footer {
+    background: #0E2621;
+    color: #AABDB1;
+    padding: 25px 0;
+  }
+
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .footer-logo {
+    color: white;
+    font-size: 25px;
+  }
+
+  .footer p {
+    font-size: 11px;
     margin: 0;
   }
 
-  p {
-    font-size: 1.25rem;
-    color: #aaa;
+  .footer-links {
+    display: flex;
+    gap: 20px;
   }
 
-  a {
-    margin-top: 20px;
-    padding: 12px 24px;
-    background: white;
-    color: black;
-    border-radius: 8px;
+  .footer-links a {
+    color: #C6D5CD;
+    font-size: 12px;
     text-decoration: none;
-    font-weight: bold;
   }
 
-  a:hover {
-    transform: scale(1.05);
+  .footer-links a:hover {
+    color: white;
+  }
+
+  @media (max-width: 1150px) {
+    nav {
+      gap: 12px;
+    }
+
+    .nav-socials {
+      gap: 10px;
+    }
+
+    .hero-content {
+      gap: 35px;
+    }
+
+    .about-grid,
+    .achievements-grid,
+    .goals-grid {
+      gap: 55px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .nav-container {
+      flex-wrap: wrap;
+      padding: 14px 0;
+    }
+
+    nav {
+      order: 3;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+    }
+
+    .hero-content {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+      max-width: 650px;
+      width: 100%;
+      margin: 20px auto 0;
+    }
+
+    .hero-photo img {
+      height: 420px;
+    }
+
+    .about-grid,
+    .achievements-grid,
+    .goals-grid,
+    .cv-container {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .container {
+      width: min(100% - 32px, 1160px);
+    }
+
+    .nav-container {
+      justify-content: center;
+    }
+
+    .logo {
+      font-size: 26px;
+    }
+
+    .nav-socials {
+      margin-left: auto;
+    }
+
+    .nav-linkedin {
+      font-size: 12px;
+    }
+
+    .nav-button {
+      padding: 9px 12px;
+      font-size: 12px;
+    }
+
+    nav {
+      gap: 10px 14px;
+    }
+
+    nav a {
+      font-size: 11px;
+    }
+
+    .hero {
+      padding: 65px 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 12vw, 70px);
+      letter-spacing: -2px;
+    }
+
+    .hero-description {
+      font-size: 17px;
+    }
+
+    .hero-meta {
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .hero-photo img {
+      height: 300px;
+    }
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 40px;
+    }
+
+    .section-heading {
+      display: block;
+    }
+
+    .section-intro {
+      margin-top: 20px;
+    }
+
+    .research-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .research-card {
+      padding: 25px;
+    }
+
+    .project-item {
+      grid-template-columns: 35px 1fr;
+      gap: 12px;
+    }
+
+    .achievement {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 </style>
